@@ -1,7 +1,11 @@
-.home{
-    display: flex;
+.home {
+  display: flex;
 }
-
-.homeContainer{
-    flex: 6;
+.home .homeContainer {
+  flex: 6;
+}
+.home .homeContainer .widgets{
+  display: flex;
+  padding: 20px;
+  gap: 20px;
 }
