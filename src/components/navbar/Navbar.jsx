@@ -8,9 +8,13 @@ import {
 } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
 import "./navbar.css";
-import avatar from "../../img/pexels-mathias-reding-11911952.jpg"
+import avatar from "../../img/pexels-mathias-reding-11911952.jpg";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 const Navbar = () => {
+  const { dispatch } = useContext(DarkModeContext);
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -24,7 +28,10 @@ const Navbar = () => {
             English
           </div>
           <div className="item">
-            <DarkModeOutlined className="icon" />
+            <DarkModeOutlined
+              className="icon"
+              onClick={() => dispatch({ type: "TOGGLE" })}
+            />
           </div>
           <div className="item">
             <FullscreenExitOutlined className="icon" />
@@ -41,11 +48,7 @@ const Navbar = () => {
             <ListOutlined className="icon" />
           </div>
           <div className="item">
-            <img
-              src ={avatar}
-              alt=""
-              className="avatar"
-            />
+            <img src={avatar} alt="" className="avatar" />
           </div>
         </div>
       </div>
